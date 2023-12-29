@@ -3,7 +3,7 @@ import AliceCarousel from 'react-alice-carousel';
 
 import { Button } from '@mui/material';
 import KeyboardArrowLeftIcon from '@mui/icons-material/KeyboardArrowLeft';
-import HomeSectionCard from '../../HomeSectionCard/HomeSectionCard';
+import HomeSectionCard from '../HomeSectionCard/HomeSectionCard';
 
 const HomeSectionCarosel = ({ data, sectionName }) => {
   const [activeIndex, setActiveIndex] = useState(0);
