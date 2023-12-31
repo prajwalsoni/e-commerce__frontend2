@@ -7,6 +7,7 @@ import { mens_kurta } from '../../../Data/mens_kurta'
 import { filters, singleFilter } from './FilterData'
 import { FormControl, FormControlLabel, FormLabel, Radio, RadioGroup } from '@mui/material'
 import FilterListIcon from '@mui/icons-material/FilterList';
+import { useLocation, useNavigate } from 'react-router-dom'
 
 
 const sortOptions = [
@@ -20,6 +21,40 @@ function classNames(...classes) {
 
 export default function Product() {
     const [mobileFiltersOpen, setMobileFiltersOpen] = useState(false)
+    const location=useLocation()
+    const navigate = useNavigate();
+    const handleFilter = (value, sectionId) => {
+        const searchParams = new URLSearchParams(location.search);
+    
+        let filterValues = searchParams.getAll(sectionId);
+    
+        if (filterValues.length > 0 && filterValues[0].split(",").includes(value)) {
+          filterValues = filterValues[0]
+            .split(",")
+            .filter((item) => item !== value);
+          if (filterValues.length === 0) {
+            searchParams.delete(sectionId);
+          }
+          console.log("includes");
+        } else {
+          // Remove all values for the current section
+          // searchParams.delete(sectionId);
+          filterValues.push(value);
+        }
+    
+        if (filterValues.length > 0){
+          searchParams.set(sectionId, filterValues.join(","));
+        // history.push({ search: searchParams.toString() });
+        }
+        const query = searchParams.toString();
+        navigate({ search: `?${query}` });
+      };
+      const handleRadioFilterChange = (e, sectionId) => {
+        const searchParams = new URLSearchParams(location.search);
+        searchParams.set(sectionId, e.target.value);
+        const query = searchParams.toString();
+        navigate({ search: `?${query}` });
+      };
 
     return (
         <div className="bg-white">
@@ -183,7 +218,7 @@ export default function Product() {
 
                         <div className="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-5">
                           <div>
-                            <div>
+                            <div className='py-10 flex justify-between item-center'>
                             <h1 className='text-lg opacity-50 font-bold'>Filters</h1>
                           <FilterListIcon/>
                             </div>
@@ -211,6 +246,7 @@ export default function Product() {
                                                         {section.options.map((option, optionIdx) => (
                                                             <div key={option.value} className="flex items-center">
                                                                 <input
+                                                                    onChange={()=>handleFilter(option.value,section.id)}
                                                                     id={`filter-${section.id}-${optionIdx}`}
                                                                     name={`${section.id}[]`}
                                                                     defaultValue={option.value}
@@ -259,7 +295,7 @@ export default function Product() {
                                                             >
                                                                 {section.options.map((option, optionIdx) => (
                                                                     <>
-                                                                        <FormControlLabel value={option.id} control={<Radio />} label={option.label} />
+                                                                        <FormControlLabel onChange={(e)=>handleRadioFilterChange(e,section.id)} value={option.value} control={<Radio />} label={option.label} />
 
                                                                     </>
 
