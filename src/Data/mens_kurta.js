@@ -1,6 +1,6 @@
 export const mens_kurta=[
     {
-        "imageUrl": "https://rukminim2.flixcart.com/image/612/612/xif0q/kurta/f/2/1/-original-imaggcq3ttzzha2p.jpeg?q=70",
+        "imageUrl": "https://rukminim2.flixcart.com/image/832/832/xif0q/kurta/u/4/w/m-foil-printed-kurta-cellux-original-imagnbf2vvetsr8u.jpeg?q=70",
         "brand": "Majestic Man",
         "title": "Men Printed Pure Cotton Straight Kurta",
         "color": "Green",
@@ -364,7 +364,7 @@ export const mens_kurta=[
           "description":"A traditional garment embodying elegance and grace. Crafted from fine fabrics, it features intricate embroidery and a relaxed fit, providing comfort and style."
     },
     {
-        "imageUrl": "https://rukminim2.flixcart.com/image/612/612/kgiaykw0-0/kurta/f/t/s/s-ml12007-327-s-manyavar-original-imafwq7fgwyvgq42.jpeg?q=70",
+        "imageUrl": "https://rukminim2.flixcart.com/image/832/832/xif0q/kurta/p/n/l/m-foil-printed-kurta-cellux-original-imagnbf2dvhqv4gm.jpeg?q=70",
         "brand": "FOLGEN",
         "title": "Men Solid Cotton Blend Straight Kurta",
         "color": "Yellow",
@@ -392,8 +392,8 @@ export const mens_kurta=[
           "description":"A traditional garment embodying elegance and grace. Crafted from fine fabrics, it features intricate embroidery and a relaxed fit, providing comfort and style."
     },
     {
-        "imageUrl": "https://rukminim2.flixcart.com/image/612/612/xif0q/kurta/2/w/d/xl-mls081-307-manyavar-original-imaghr8gwatx2ss9.jpeg?q=70",
-        "brand": "Tap in",
+        "imageUrl": "https://rukminim2.flixcart.com/image/832/832/xif0q/kurta/a/d/p/l-foil-printed-kurta-cellux-original-imagnbf2ynbaqfj3.jpeg?q=70",
+        "brand": "Tap In",
         "title": "Men Solid Cotton Blend Straight Kurta",
         "color": "Orange",
         "discountedPrice": 395,
@@ -413,14 +413,14 @@ export const mens_kurta=[
               "quantity": 50
             }
           ],
-          "quantity": 100,
+          "quantity": 80,
           "topLavelCategory": "Men",
           "secondLavelCategory": "Clothing",
           "thirdLavelCategory": "mens_kurta",
           "description":"A traditional garment embodying elegance and grace. Crafted from fine fabrics, it features intricate embroidery and a relaxed fit, providing comfort and style."
     },
     {
-        "imageUrl": "https://rukminim2.flixcart.com/image/612/612/xif0q/kurta/5/3/w/m-pokuohspe24166-peter-england-original-imaggraw9cqkggjq.jpeg?q=70",
+        "imageUrl": "https://rukminim2.flixcart.com/image/832/832/xif0q/kurta/o/o/4/m-foil-printed-kurta-cellux-original-imagnbf2hdnsvgpr.jpeg?q=70",
         "brand": "FUBAR",
         "title": "Men Printed Cotton Blend Straight Kurta",
         "color": "Dark Blue",
@@ -448,7 +448,7 @@ export const mens_kurta=[
           "description":"A traditional garment embodying elegance and grace. Crafted from fine fabrics, it features intricate embroidery and a relaxed fit, providing comfort and style."
     },
     {
-        "imageUrl": "https://rukminim2.flixcart.com/image/612/612/xif0q/kurta/5/3/w/m-pokuohspe24166-peter-england-original-imaggraw9cqkggjq.jpeg?q=70",
+        "imageUrl": "https://rukminim2.flixcart.com/image/832/832/xif0q/kurta/q/a/g/xxl-foil-printed-kurta-cellux-original-imagnbf2wcdfvzm4.jpeg?q=70",
         "brand": "Vida Loca",
         "title": "Men Solid Pure Cotton Straight Kurta",
         "color": "White",
@@ -476,7 +476,7 @@ export const mens_kurta=[
           "description":"A traditional garment embodying elegance and grace. Crafted from fine fabrics, it features intricate embroidery and a relaxed fit, providing comfort and style."
     },
     {
-        "imageUrl": "https://rukminim2.flixcart.com/image/612/612/kqzj7gw0/kurta/p/i/a/s-pokuohsp875130-peter-england-original-imag4vxzgsnz3xug.jpeg?q=70",
+        "imageUrl": "https://rukminim2.flixcart.com/image/832/832/xif0q/kurta/6/q/k/s-foil-printed-kurta-cellux-original-imagnbf2pnbzcaxh.jpeg?q=70",
         "brand": "Vida Loca",
         "title": "Men Self Design Pure Cotton Straight Kurta",
         "color": "White",
@@ -505,7 +505,7 @@ export const mens_kurta=[
     },
     {
         "imageUrl": "https://rukminim2.flixcart.com/image/612/612/kqzj7gw0/kurta/0/9/o/s-pokuohsp875130-peter-england-original-imag4vxzmgkh9swy.jpeg?q=70",
-        "brand": "Nofilter",
+        "brand": "Peter England",
         "title": "Men Solid Pure Cotton Straight Kurta",
         "color": "White",
         "discountedPrice": 370,
@@ -532,7 +532,7 @@ export const mens_kurta=[
           "description":"A traditional garment embodying elegance and grace. Crafted from fine fabrics, it features intricate embroidery and a relaxed fit, providing comfort and style."
     },
     {
-        "imageUrl": "https://rukminim2.flixcart.com/image/612/612/l3t2fm80/shirt/f/f/r/40-pcshsslp132908-peter-england-original-imageujgatzfygmz.jpeg?q=70",
+        "imageUrl": "https://rukminim2.flixcart.com/image/832/832/xif0q/kurta/s/k/h/l-foil-printed-kurta-cellux-original-imagnbf2zmgjer9h.jpeg?q=70",
         "brand": "KSH Trendz",
         "title": "Men Solid Cotton Blend Straight Kurta",
         "color": "Yellow",
@@ -560,7 +560,7 @@ export const mens_kurta=[
           "description":"A traditional garment embodying elegance and grace. Crafted from fine fabrics, it features intricate embroidery and a relaxed fit, providing comfort and style."
     },
     {
-        "imageUrl": "https://rukminim2.flixcart.com/image/612/612/xif0q/kurta/k/a/j/m-pokuolsps32824-peter-england-original-imagscsvc9byyc2g.jpeg?q=70",
+        "imageUrl": "https://rukminim2.flixcart.com/image/832/832/xif0q/kurta/t/d/o/s-foil-printed-kurta-cellux-original-imagnbf23ntufhah.jpeg?q=70",
         "brand": "Vida Loca",
         "title": "Men Self Design Pure Cotton Straight Kurta",
         "color": "Beige",
@@ -588,7 +588,7 @@ export const mens_kurta=[
           "description":"A traditional garment embodying elegance and grace. Crafted from fine fabrics, it features intricate embroidery and a relaxed fit, providing comfort and style."
     },
     {
-        "imageUrl": "https://rukminim2.flixcart.com/image/612/612/xif0q/kurta/f/4/7/m-pokuolspg18120-peter-england-original-imagsbu5zucg7gbb.jpeg?q=70",
+        "imageUrl": "https://rukminim2.flixcart.com/image/832/832/xif0q/kurta/7/w/l/l-foil-printed-kurta-cellux-original-imagnbf2rrzdykr9.jpeg?q=70",
         "brand": "Vida Loca",
         "title": "Men Self Design Pure Cotton Straight Kurta",
         "color": "Light Blue",
@@ -616,7 +616,7 @@ export const mens_kurta=[
           "description":"A traditional garment embodying elegance and grace. Crafted from fine fabrics, it features intricate embroidery and a relaxed fit, providing comfort and style."
     },
     {
-        "imageUrl": "https://rukminim2.flixcart.com/image/612/612/xif0q/kurta/b/i/1/m-pokuolspy00734-peter-england-original-imagsf8tsgzhxehv.jpeg?q=70",
+        "imageUrl": "https://rukminim2.flixcart.com/image/612/612/xif0q/kurta/d/k/i/m-foil-printed-kurta-cellux-original-imagnbf2xupfpbke.jpeg?q=70",
         "brand": "FUBAR",
         "title": "Men Printed Cotton Blend Straight Kurta",
         "color": "Purple",
@@ -784,7 +784,7 @@ export const mens_kurta=[
           "description":"A traditional garment embodying elegance and grace. Crafted from fine fabrics, it features intricate embroidery and a relaxed fit, providing comfort and style."
     },
     {
-        "imageUrl": "https://rukminim2.flixcart.com/image/612/612/xif0q/kurta/s/5/6/m-pokuolsp002461-peter-england-original-imagsd7vb68rpurk.jpeg?q=70",
+        "imageUrl": "https://rukminim2.flixcart.com/image/612/612/l3929ow0/kurta/e/m/n/xxl-beige-linen-kurtaax-spoque-original-imageewqxjeftm2p.jpeg?q=70",
         "brand": "FUBAR",
         "title": "Men Printed Cotton Blend Straight Kurta",
         "color": "Maroon",
@@ -896,7 +896,7 @@ export const mens_kurta=[
           "description":"A traditional garment embodying elegance and grace. Crafted from fine fabrics, it features intricate embroidery and a relaxed fit, providing comfort and style."
     },
     {
-        "imageUrl": "https://rukminim2.flixcart.com/image/612/612/xif0q/kurta/w/0/g/m-pokuolsps26968-peter-england-original-imagsbu5tynhgqrt.jpeg?q=70",
+        "imageUrl": "https://rukminim2.flixcart.com/image/1492/1492/xif0q/kurta/f/w/f/s-peacockbindiprint-spoque-original-imagmgzjheemhwnz.jpeg?q=70",
         "brand": "More & More",
         "title": "Men Self Design Cotton Blend Straight Kurta",
         "color": "Yellow",
@@ -924,7 +924,7 @@ export const mens_kurta=[
           "description":"A traditional garment embodying elegance and grace. Crafted from fine fabrics, it features intricate embroidery and a relaxed fit, providing comfort and style."
     },
     {
-        "imageUrl": "https://rukminim2.flixcart.com/image/612/612/knt7zbk0/kurta/b/x/u/3xl-pokuohsfq16787-peter-england-original-imag2emcv3mfcjcn.jpeg?q=70",
+        "imageUrl": "https://rukminim2.flixcart.com/image/612/612/l2xmqvk0/kurta/j/a/5/l-haldi-yellow-colorbenz-original-image6f9yvkgcams.jpeg?q=70",
         "brand": "SG LEMAN",
         "title": "Men Printed Pure Silk Straight Kurta",
         "color": "Gold",
@@ -952,7 +952,7 @@ export const mens_kurta=[
           "description":"A traditional garment embodying elegance and grace. Crafted from fine fabrics, it features intricate embroidery and a relaxed fit, providing comfort and style."
     },
     {
-        "imageUrl": "https://rukminim2.flixcart.com/image/612/612/xif0q/kurta/5/3/w/m-pokuohspe24166-peter-england-original-imaggraw9cqkggjq.jpeg?q=70",
+        "imageUrl": "https://rukminim2.flixcart.com/image/612/612/xif0q/kurta/e/o/o/l-kurta1513-zartha-original-imagsuzdrqbpwwcn.jpeg?q=70",
         "brand": "ALY JOHN",
         "title": "Men Solid Pure Cotton Straight Kurta",
         "color": "Maroon",
@@ -1092,8 +1092,8 @@ export const mens_kurta=[
           "description":"A traditional garment embodying elegance and grace. Crafted from fine fabrics, it features intricate embroidery and a relaxed fit, providing comfort and style."
     },
     {
-        "imageUrl": "https://rukminim2.flixcart.com/image/612/612/xif0q/kurta/q/5/a/-original-imags8jj9gxmuxes.jpeg?q=70",
-        "brand": "Nofilter",
+        "imageUrl": "https://rukminim2.flixcart.com/image/612/612/xif0q/kurta/b/a/d/xxl-mango-long-spoque-original-imaghdgnt28usqhf.jpeg?q=70",
+        "brand": "Manyavar",
         "title": "Men Solid Pure Cotton Straight Kurta",
         "color": "White",
         "discountedPrice": 393,

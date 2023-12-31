@@ -24,6 +24,8 @@ import { StarIcon } from '@heroicons/react/20/solid'
 import { RadioGroup } from '@headlessui/react'
 import { Box, Button, Grid, LinearProgress, Rating } from '@mui/material'
 import ProductReviewCard from './ProductReviewCard'
+import { mens_kurta } from '../../../Data/mens_kurta'
+import HomeSectionCard from '../HomeSectionCard/HomeSectionCard'
 
 const product = {
     name: 'Basic Tee 6-Pack',
@@ -147,6 +149,7 @@ export default function ProductDetails() {
                         {/* Options */}
                         <div className="mt-4 lg:row-span-3 lg:mt-0">
                             <h2 className="sr-only">Product information</h2>
+                            
                             <div className='flex space-x-5 items-center text-lg lg:text-xl text-gray-900 mt-g'>
                                 <p className='font-semibold'>₹199</p>
                                 <p className='opacity-50 line-through'>₹211</p>
@@ -227,12 +230,13 @@ export default function ProductDetails() {
                                     </RadioGroup>
                                 </div>
 
-                                <Button color="secondary" variant="contained" sx={{ px: "2rem", py: "1rem", bgcolor: "#9155fd" }}>
-                                    Add To Cart
-                                </Button>
-
-
-
+                                <Button
+                  variant="contained"
+                  type="submit"
+                  sx={{ padding: ".8rem 2rem", marginTop: "2rem" }}
+                >
+                  Add To Cart
+                </Button>
 
                             </form>
                         </div>
@@ -283,12 +287,12 @@ export default function ProductDetails() {
                             </Grid>
 
                             <Grid item xs={5}>
-                                <h1 className="text-xl font-semibold pb-1">Product Ratings</h1>
+                                <h1 className="text-xl font-semibold pb-2">Product Ratings</h1>
                                 <div className="flex items-center space-x-3">
                                     <Rating value={4.6} precision={.5} readOnly />
                                     <p className="opacity-60">58890 Ratings</p>
                                 </div>
-                                <Box className="mt-5">
+                                <Box className="mt-5 space-y-3">
                                     <Grid
                                         container
                                         alignItems="center"
@@ -302,7 +306,7 @@ export default function ProductDetails() {
 
                                                 sx={{ bgcolor: "#d0d0d0", borderRadius: 4, height: 7 }}
                                                 variant="determinate"
-                                                value={40}
+                                                value={80}
                                                 color="success"
                                             />
                                         </Grid>
@@ -319,10 +323,10 @@ export default function ProductDetails() {
                                         <Grid xs={7}>
                                             <LinearProgress
 
-                                                sx={{ bgcolor: "#d0d0d0", borderRadius: 4, height: 7 }}
+                                                sx={{ bgcolor: "#d0d0d0", borderRadius: 4, height: 7,color:"yellow" }}
                                                 variant="determinate"
-                                                value={40}
-                                                color="success"
+                                                value={70}
+                                                
                                             />
                                         </Grid>
 
@@ -359,8 +363,26 @@ export default function ProductDetails() {
 
                                                 sx={{ bgcolor: "#d0d0d0", borderRadius: 4, height: 7 }}
                                                 variant="determinate"
-                                                value={40}
-                                                color="success"
+                                                value={20}
+                                                color="warning"
+                                            />
+                                        </Grid>
+                                    </Grid>
+                                    <Grid
+                                        container
+                                        alignItems="center"
+                                        gap={2}
+                                    >
+                                        <Grid item xs={7}>
+                                            <p className="p-0">Nice</p>
+                                        </Grid>
+                                        <Grid xs={7}>
+                                            <LinearProgress
+
+                                                sx={{ bgcolor: "#d0d0d0", borderRadius: 4, height: 7 }}
+                                                variant="determinate"
+                                                value={50}
+                                                color="error"
                                             />
                                         </Grid>
 
@@ -372,6 +394,15 @@ export default function ProductDetails() {
                         </Grid>
                     </div>
                 </section>
+                 {/* similer product */}
+        <section className=" pt-10">
+          <h1 className="py-5 text-xl font-bold">Similar Products</h1>
+          <div className="flex flex-wrap space-y-5">
+            {mens_kurta.map((item) => (
+              <HomeSectionCard product={item} />
+            ))}
+          </div>
+        </section>
             </div>
         </div>
     )
