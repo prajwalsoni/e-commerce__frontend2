@@ -1,7 +1,13 @@
 import React from 'react'
 import CartItem from './CartItem'
 import { Button } from '@mui/base'
+import { useNavigate } from 'react-router-dom'
 const Cart = () => {
+
+    const navigate=useNavigate();
+    const handleCheckout=()=>{
+        navigate("/checkout?step=2")
+    }
     return (
         <div className="lg:grid grid-cols-3 lg:px-16 relative">
             <div className="lg:col-span-2 lg:px-5 bg-white">
@@ -31,7 +37,7 @@ const Cart = () => {
                             <span>Total Amount</span>
                             <span className="text-green-700">₹1278</span>
                         </div>
-                        <Button
+                        <Button onClick={handleCheckout}
                             variant="contained"
                             className='w-full mt-5'
                             style={{ backgroundColor: "#ffa500", padding: "0.7rem 2.5rem" }}

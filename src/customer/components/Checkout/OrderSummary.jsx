@@ -15,11 +15,11 @@ const OrderSummary = () => {
                     {[1,1,1,1].map((item)=><CartItem/>)}
                 </div>
             </div>
-            <div className="px-5 sticky top-0 h-[100vh] mt-5 lg:mt-0 ">
+            <div className="px-1 py-1 sticky top-0 h-[100vh] mt-5 lg:mt-0 ">
                 <div className="border p-5 bg-white shadow-lg rounded-md">
                     <p className="font-bold opacity-60 pb-4">PRICE DETAILS</p>
                     <hr />
-                    <div className="space-y-3 font-semibold mb-10">
+                    <div className="space-y-3 font-semibold mb-9">
                         <div className="flex justify-between pt-3 text-black ">
                             <span>Price </span>
                             <span>₹4697</span>

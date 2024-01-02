@@ -26,6 +26,7 @@ import { Box, Button, Grid, LinearProgress, Rating } from '@mui/material'
 import ProductReviewCard from './ProductReviewCard'
 import { mens_kurta } from '../../../Data/mens_kurta'
 import HomeSectionCard from '../HomeSectionCard/HomeSectionCard'
+import { useNavigate } from 'react-router-dom'
 
 const product = {
     name: 'Basic Tee 6-Pack',
@@ -84,7 +85,11 @@ function classNames(...classes) {
 export default function ProductDetails() {
     const [selectedColor, setSelectedColor] = useState(product.colors[0])
     const [selectedSize, setSelectedSize] = useState(product.sizes[2])
+    const navigate=useNavigate();
 
+    const handleAddToCart=()=>{
+        navigate("/cart")
+    }
     return (
         <div className="bg-white lg:px-20">
             <div className="pt-6">
@@ -230,7 +235,7 @@ export default function ProductDetails() {
                                     </RadioGroup>
                                 </div>
 
-                                <Button
+                                <Button onClick={handleAddToCart}
                   variant="contained"
                   type="submit"
                   sx={{ padding: ".8rem 2rem", marginTop: "2rem" }}
@@ -397,7 +402,7 @@ export default function ProductDetails() {
                  {/* similer product */}
         <section className=" pt-10">
           <h1 className="py-5 text-xl font-bold">Similar Products</h1>
-          <div className="flex flex-wrap space-y-5">
+          <div className="px-5 flex flex-wrap space-x-1.8 space-y-1.8">
             {mens_kurta.map((item) => (
               <HomeSectionCard product={item} />
             ))}
