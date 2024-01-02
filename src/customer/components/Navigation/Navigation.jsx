@@ -12,6 +12,7 @@ import { Avatar, Button, Menu, MenuItem } from "@mui/material";
 import { deepPurple } from "@mui/material/colors";
 import { navigation } from "./navigationData";
 import { useNavigate } from "react-router-dom";
+import AuthModal from "../../Auth/AuthModal";
 
 
 function classNames(...classes) {
@@ -236,8 +237,8 @@ export default function Navigation() {
                 
                   <span className="sr-only">Your Company</span>
                   <img
-                    src="data:image/png;base64,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"
-                    alt="ShopwithSoni"
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4hfgRwTLvn46f8kylrkgpPlTzrLk1hm1g9g&usqp=CAU"
+                    alt="AraSan"
                     className="h-14 w-14 mr-2"
                   />
                 
@@ -462,6 +463,7 @@ export default function Navigation() {
           </div>
         </nav>
       </header>
+      <AuthModal handleClose={handleClose} open={openAuthModal}/>
     </div>
   );
 }
