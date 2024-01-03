@@ -1,9 +1,22 @@
 import { Button, Grid, TextField } from '@mui/material';
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import { getUser, register } from '../../State/Auth/Action';
 
 const RegisterForm = () => {
     const navigate = useNavigate();
+    const dispatch = useDispatch();
+    const { auth } = useSelector((store) => store);
+    const jwt = localStorage.getItem("jwt");
+
+    useEffect(() => {
+        if (jwt) {
+            dispatch(getUser(jwt))
+        }
+    }, [jwt,auth.jwt])
+
+
     const handleSubmit = (event) => {
         event.preventDefault();
         const data = new FormData(event.currentTarget);
@@ -15,6 +28,7 @@ const RegisterForm = () => {
             password: data.get("password"),
 
         }
+        dispatch(register(userData))
         console.log("user data", userData);
     }
     return (
@@ -78,7 +92,7 @@ const RegisterForm = () => {
             </form>
             <div className="flex justify-center flex-col items-center">
                 <div className="py-3 flex items-center">
-                    <p className="m-0 p-0">don't have account ?</p>
+                    <p className="m-0 p-0"> Have account ?</p>
                     <Button onClick={() => navigate("/login")} className="ml-5" size="small">
                         Login
                     </Button>

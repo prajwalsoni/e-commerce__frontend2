@@ -1,21 +1,29 @@
 import { Button, Grid, TextField } from '@mui/material';
 import React from 'react';
+import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
 const LoginForm = () => {
     const navigate = useNavigate();
+    const dispatch=useDispatch();
+
+    useEffect(() => {
+        if (jwt) {
+            dispatch(getUser(jwt))
+        }
+    }, [jwt,auth.jwt])
+
     const handleSubmit = (event) => {
         event.preventDefault();
         const data = new FormData(event.currentTarget);
         // eslint-disable-next-line no-console
         const userData = {
-            firstName: data.get("firstName"),
-            lastName: data.get("lastName"),
             email: data.get("email"),
             password: data.get("password"),
-
         }
+
         console.log("user data", userData);
+        dispatch(login(userData))
     }
     return (
         <div className="">
