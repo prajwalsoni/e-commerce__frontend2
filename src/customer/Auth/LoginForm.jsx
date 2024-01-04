@@ -6,12 +6,8 @@ import { useNavigate } from 'react-router-dom';
 const LoginForm = () => {
     const navigate = useNavigate();
     const dispatch=useDispatch();
-
-    useEffect(() => {
-        if (jwt) {
-            dispatch(getUser(jwt))
-        }
-    }, [jwt,auth.jwt])
+    const jwt=localStorage.getItem("jwt");
+    const { auth } = useSelector((store) => store);
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -19,11 +15,11 @@ const LoginForm = () => {
         // eslint-disable-next-line no-console
         const userData = {
             email: data.get("email"),
-            password: data.get("password"),
+            password: data.get("password")
         }
-
-        console.log("user data", userData);
         dispatch(login(userData))
+        console.log("user data", userData);
+        
     }
     return (
         <div className="">

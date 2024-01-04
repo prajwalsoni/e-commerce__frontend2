@@ -44,6 +44,7 @@ export default function Navigation() {
   };
   const handleClose = () => {
     setOpenAuthModal(false);
+    
   };
 
   const handleCategoryClick = (category, section, item, close) => {
@@ -262,9 +263,9 @@ handleCloseUserMenu()
                 
                   <span className="sr-only">Your Company</span>
                   <img
-                    src=""
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_JdsQxCCnjE8HvmtHnGZNXGrw1uqMiBW4-w&usqp=CAU"
                     alt="SoniSelects.com"
-                    className="h-14 w-14 mr-2"
+                    className="h-18 w-20 mr-2"
                   />
                 
               </div>
