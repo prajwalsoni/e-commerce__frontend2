@@ -1,26 +1,12 @@
-import { Button, Grid, TextField } from '@mui/material';
-import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
-import { getUser, register } from '../../State/Auth/Action';
+import { Button, Grid, TextField } from '@mui/material'
+import React from 'react'
+import { Navigate, useNavigate } from 'react-router-dom';
 
 const RegisterForm = () => {
-    const navigate = useNavigate();
-    const dispatch = useDispatch();
-    const { auth } = useSelector((store) => store);
-    const jwt = localStorage.getItem("jwt");
-
-    useEffect(() => {
-        if (jwt) {
-            dispatch(getUser(jwt))
-        }
-    }, [jwt,auth.jwt])
-
-
+    const navigate=useNavigate();
     const handleSubmit = (event) => {
         event.preventDefault();
         const data = new FormData(event.currentTarget);
-        // eslint-disable-next-line no-console
         const userData = {
             firstName: data.get("firstName"),
             lastName: data.get("lastName"),
@@ -28,12 +14,10 @@ const RegisterForm = () => {
             password: data.get("password"),
 
         }
-        
-        console.log("user data", userData); 
-        dispatch(register(userData))
+        console.log("user data", userData);
     }
     return (
-        <div className="">
+        <div>
             <form onSubmit={handleSubmit}>
                 <Grid container spacing={3}>
                     <Grid item xs={12} sm={6}>
@@ -91,12 +75,10 @@ const RegisterForm = () => {
                     </Grid>
                 </Grid>
             </form>
-            <div className="flex justify-center flex-col items-center">
-                <div className="py-3 flex items-center">
-                    <p className="m-0 p-0"> Have account ?</p>
-                    <Button onClick={() => navigate("/login")} className="ml-5" size="small">
-                        Login
-                    </Button>
+            <div className='flex justify-center flex-col items-center'>
+                <div className='py-3 flex items-center'>
+                    <p>if you already have an account?</p>
+                    <Button onClick={()=>navigate("/login")} className='ml-5' size='small'>Login</Button>
                 </div>
             </div>
         </div>
