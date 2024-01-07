@@ -23,14 +23,14 @@ function classNames(...classes) {
 
 export default function Navigation() {
   const [open, setOpen] = useState(false);
-  const navigate=useNavigate();
+  const navigate = useNavigate();
   const [openAuthModal, setOpenAuthModal] = useState(false);
   const [anchorEl, setAnchorEl] = useState(null);
   const openUserMenu = Boolean(anchorEl);
   const jwt = localStorage.getItem("jwt");
   const { auth } = useSelector((store) => store);
-  const dispatch=useDispatch();
-  const  location=useLocation();
+  const dispatch = useDispatch();
+  const location = useLocation();
 
   const handleUserClick = (event) => {
     setAnchorEl(event.currentTarget);
@@ -44,36 +44,34 @@ export default function Navigation() {
   };
   const handleClose = () => {
     setOpenAuthModal(false);
-    
+
   };
 
   const handleCategoryClick = (category, section, item, close) => {
-      navigate(`/${category.id}/${section.id}/${item.id}`);
+    navigate(`/${category.id}/${section.id}/${item.id}`);
     close();
   };
   useEffect(() => {
     if (jwt) {
-        dispatch(getUser(jwt))
+      dispatch(getUser(jwt))
     }
-}, [jwt,auth.jwt])
+  }, [jwt, auth.jwt])
 
-useEffect(()=>{
+  useEffect(() => {
 
-  if(auth.user)
-  {
-    handleClose()
+    if (auth.user) {
+      handleClose()
+    }
+    if (location.pathname === "/login" || location.pathname == "/register") {
+      navigate(-1)
+    }
+
+  }, [auth.user])
+
+  const handleLogout = () => {
+    dispatch(logout())
+    handleCloseUserMenu()
   }
-  if(location.pathname==="/login" || location.pathname=="/register")
-  {
-    navigate(-1)
-  }
-
-},[auth.user])
-
-const handleLogout = ( )  => {
-dispatch(logout())
-handleCloseUserMenu()
-}
   return (
     <div className="bg-white pb-10">
       {/* Mobile menu */}
@@ -225,7 +223,7 @@ handleCloseUserMenu()
                 <div className="border-t border-gray-200 px-4 py-6">
                   <a href="/" className="-m-2 flex items-center p-2">
                     <img
-                      src="https://tailwindui.com/img/flags/flag-canada.svg"
+                      src="data:image/png;base64,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"
                       alt=""
                       className="block h-auto w-5 flex-shrink-0"
                     />
@@ -244,6 +242,8 @@ handleCloseUserMenu()
       <header className="relative bg-white">
         <p className="flex h-10 items-center justify-center bg-cyan-600 px-4 text-sm font-medium text-white sm:px-6 lg:px-8">
           Get Free Delivery On Orders Over 500 ₹
+          <span className="absolute left-1 z-index: 1">STYLE INFUSION</span>
+          <span className="absolute right-1 z-index: 1">CLICK REVOLUTION</span>
         </p>
 
         <nav aria-label="Top" className="mx-auto">
@@ -259,15 +259,15 @@ handleCloseUserMenu()
               </button>
 
               {/* Logo */}
-              <div className="ml-6 flex lg:ml-13">  
-                  <span className="sr-only">Your Company</span>
-                  <a href="https://www.instagram.com/prajwal_soni__/" target="_blank" rel="noopener noreferrer">
+              <div className="ml-6 flex lg:ml-13">
+                <span className="sr-only">Your Company</span>
+                <a href="https://www.instagram.com/prajwal_soni__/" target="_blank" rel="noopener noreferrer">
                   <img
                     src={process.env.PUBLIC_URL + '/images/Logo.png'}
                     alt="SoniSelects.com"
                     className="h-12 w-25 mr-3"
                   />
-                  </a>
+                </a>
               </div>
 
               {/* Flyout menus */}
@@ -442,8 +442,8 @@ handleCloseUserMenu()
                         <MenuItem onClick={handleCloseUserMenu}>
                           Profile
                         </MenuItem>
-                        
-                        <MenuItem onClick = {() =>navigate("/account/order")} >
+
+                        <MenuItem onClick={() => navigate("/account/order")} >
                           My Orders
                         </MenuItem>
                         <MenuItem onClick={handleLogout} >Logout</MenuItem>
@@ -489,7 +489,7 @@ handleCloseUserMenu()
           </div>
         </nav>
       </header>
-      <AuthModal handleClose={handleClose} open={openAuthModal}/>
+      <AuthModal handleClose={handleClose} open={openAuthModal} />
     </div>
   );
 }
