@@ -5,7 +5,7 @@ import { ChevronDownIcon, FunnelIcon, MinusIcon, PlusIcon, Squares2X2Icon } from
 import ProductCard from './ProductCard'
 import { mens_kurta } from '../../../Data/mens_kurta'
 import { filters, singleFilter } from './FilterData'
-import { FormControl, FormControlLabel, FormLabel, Radio, RadioGroup } from '@mui/material'
+import { FormControl, FormControlLabel, FormLabel, Pagination, Radio, RadioGroup } from '@mui/material'
 import FilterListIcon from '@mui/icons-material/FilterList';
 import { useLocation, useNavigate, useParams } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
@@ -38,6 +38,16 @@ export default function Product() {
     const sortValue = searchParams.get("sort");
     const pageNumber = searchParams.get("page") || 1;
     const stock = searchParams.get("stock");
+ 
+
+    const handlePaginationChange = (event, value) => {
+        const searchParams = new URLSearchParams(location.search);
+        searchParams.set("page", value);
+        const query = searchParams.toString();
+        console.log(searchParams,value)
+        navigate({ search: `?${query}` });
+      };
+
     const handleFilter = (value, sectionId) => {
         const searchParams = new URLSearchParams(location.search);
 
@@ -83,7 +93,7 @@ export default function Product() {
             minDiscount: disccount || 0,
             sort: sortValue || "price_low",
             pageNumber: pageNumber - 1,
-            pageSize: 10,
+            pageSize: 1,
             stock: stock,
         };
         dispatch(findProducts(data));
@@ -365,6 +375,16 @@ export default function Product() {
                             </div>
                         </div>
                     </section>
+                    <section className="w-full px-[3.6rem]">
+          <div className="mx-auto px-4 py-5 flex justify-center">
+            <Pagination
+              count={product.products?.totalPages}
+              color="secondary"
+              className=""
+              onChange={handlePaginationChange}
+            />
+          </div>
+        </section>
                 </main>
             </div>
         </div>

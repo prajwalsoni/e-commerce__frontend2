@@ -3,6 +3,7 @@ import { FIND_PRODUCTS_FAILURE, FIND_PRODUCTS_REQUEST, FIND_PRODUCTS_SUCCESS, FI
   
   const initialState = {
     products: [],
+    product:null,
     loading: false,
     error: null,
   };

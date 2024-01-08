@@ -1,32 +1,12 @@
-/*
-  This example requires some changes to your config:
-  
-  ```
-  // tailwind.config.js
-  module.exports = {
-    // ...
-    theme: {
-      extend: {
-        gridTemplateRows: {
-          '[auto,auto,1fr]': 'auto auto 1fr',
-        },
-      },
-    },
-    plugins: [
-      // ...
-      require('@tailwindcss/aspect-ratio'),
-    ],
-  }
-  ```
-*/
-import { useState } from 'react'
-import { StarIcon } from '@heroicons/react/20/solid'
+import { useEffect, useState } from 'react'
 import { RadioGroup } from '@headlessui/react'
 import { Box, Button, Grid, LinearProgress, Rating } from '@mui/material'
 import ProductReviewCard from './ProductReviewCard'
 import { mens_kurta } from '../../../Data/mens_kurta'
 import HomeSectionCard from '../HomeSectionCard/HomeSectionCard'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux'
+import { findProductById } from '../../../State/Product/Action'
 
 const product = {
     name: 'Basic Tee 6-Pack',
@@ -83,13 +63,25 @@ function classNames(...classes) {
 }
 
 export default function ProductDetails() {
-    const [selectedColor, setSelectedColor] = useState(product.colors[0])
-    const [selectedSize, setSelectedSize] = useState(product.sizes[2])
+    
+    const [selectedSize, setSelectedSize] = useState(" ")
     const navigate=useNavigate();
+    const params=useParams();
+    const dispatch=useDispatch();
+    const{products}=useSelector(store=>store)
+
+
+
+    console.log("----",params.productId)
+    
 
     const handleAddToCart=()=>{
         navigate("/cart")
     }
+    useEffect(()  => {
+    const data ={productId:params.productId}
+        dispatch(findProductById(data))
+    },[params.productId])
     return (
         <div className="bg-white lg:px-20">
             <div className="pt-6">
@@ -123,15 +115,15 @@ export default function ProductDetails() {
                 </nav>
                 <section className='grid grid-cols-1 lg:grid-cols-2 gap-x-8 gap-y-10 px-4 pt-10'>
 
-                    {/* Image gallery */}
-                    <div className="flex flex-col items-center">
-                        <div className="overflow-hidden rounded-lg max-w-[30rem] max-h-[32rem]">
-                            <img
-                                src={product.images[0].src}
-                                alt={product.images[0].alt}
-                                className="h-full w-full object-cover object-center"
-                            />
-                        </div>
+                     {/* Image gallery */}
+          <div className="flex flex-col items-center ">
+            <div className=" overflow-hidden rounded-lg max-w-[30rem] max-h-[35rem]">
+              <img
+                src={products.product?.imageUrl}
+                alt={product.images[0].alt}
+                className="h-full w-full object-cover object-center"
+              />
+            </div>
                         <div className="flex flex-wrap space-x-5 justify-center">
                             {product.images.map((item) => <div className="aspect-h-2 aspect-w-3 overflow-hidden rounded-lg max-w-[5rem] max-h-[5rem] mt-4">
                                 <img
