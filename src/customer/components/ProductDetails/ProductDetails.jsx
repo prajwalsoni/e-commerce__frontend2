@@ -68,9 +68,10 @@ export default function ProductDetails() {
     const navigate=useNavigate();
     const params=useParams();
     const dispatch=useDispatch();
-    const{products}=useSelector(store=>store)
+    const {products}=useSelector(store=>store)
+    
 
-
+    console.log("products",products)
 
     console.log("----",params.productId)
     
@@ -115,15 +116,15 @@ export default function ProductDetails() {
                 </nav>
                 <section className='grid grid-cols-1 lg:grid-cols-2 gap-x-8 gap-y-10 px-4 pt-10'>
 
-                     {/* Image gallery */}
-          <div className="flex flex-col items-center ">
-            <div className=" overflow-hidden rounded-lg max-w-[30rem] max-h-[35rem]">
-              <img
-                src={products.product?.imageUrl}
-                alt={product.images[0].alt}
-                className="h-full w-full object-cover object-center"
-              />
-            </div>
+                    {/* Image gallery */}
+                    <div className="flex flex-col items-center">
+                        <div className="overflow-hidden rounded-lg max-w-[30rem] max-h-[32rem]">
+                            <img
+                                src={products.product?.imageUrl}
+                                alt={product.images[0].alt}
+                                className="h-full w-full object-cover object-center"
+                            />
+                        </div>
                         <div className="flex flex-wrap space-x-5 justify-center">
                             {product.images.map((item) => <div className="aspect-h-2 aspect-w-3 overflow-hidden rounded-lg max-w-[5rem] max-h-[5rem] mt-4">
                                 <img
@@ -139,8 +140,8 @@ export default function ProductDetails() {
                     {/* Product info */}
                     <div className="lg:col-span-1 maxt-auto max-w-2xl px-4 pb-16 lg:max-w-7xl lg:px-8 lg:pb-24">
                         <div className="lg:col-span-2">
-                            <h1 className="text-lg lg:text-xl font-semibold text-gray-900">Universal Outfit</h1>
-                            <h1 className='text-lg lg:text-xl text-gray-900 opacity-60 pt-1'></h1>
+                            <h1 className="text-lg lg:text-xl font-semibold text-gray-900">{products.product?.brand}</h1>
+                            <h1 className='text-lg lg:text-xl text-gray-900 opacity-60 pt-1'>{products.product?.title}</h1>
                         </div>
 
                         {/* Options */}
@@ -148,9 +149,9 @@ export default function ProductDetails() {
                             <h2 className="sr-only">Product information</h2>
                             
                             <div className='flex space-x-5 items-center text-lg lg:text-xl text-gray-900 mt-g'>
-                                <p className='font-semibold'>₹199</p>
-                                <p className='opacity-50 line-through'>₹211</p>
-                                <p className='text-green-600 font-semibold'>5% off</p>
+                                <p className='font-semibold'>{products.product?.discountedPrice}</p>
+                                <p className='opacity-50 line-through'>{products.product?.price}</p>
+                                <p className='text-green-600 font-semibold'>{products.product?.discountPersent}%</p>
                             </div>
 
                             {/* Reviews */}
@@ -403,4 +404,4 @@ export default function ProductDetails() {
             </div>
         </div>
     )
-}
+   }
