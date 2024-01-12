@@ -32,7 +32,7 @@ import { FIND_PRODUCTS_FAILURE, FIND_PRODUCTS_REQUEST, FIND_PRODUCTS_SUCCESS, FI
           return {
             ...state,
             loading: false,
-            products: action.payload
+            error: action.payload
           };
 
         default:

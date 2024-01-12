@@ -7,6 +7,7 @@ import HomeSectionCard from '../HomeSectionCard/HomeSectionCard'
 import { useNavigate, useParams } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { findProductById } from '../../../State/Product/Action'
+import { addItemToCart } from '../../../State/Cart/Action'
 
 const product = {
     name: 'Basic Tee 6-Pack',
@@ -63,26 +64,29 @@ function classNames(...classes) {
 }
 
 export default function ProductDetails() {
-    
+
     const [selectedSize, setSelectedSize] = useState(" ")
-    const navigate=useNavigate();
-    const params=useParams();
-    const dispatch=useDispatch();
-    const {products}=useSelector(store=>store)
+    const navigate = useNavigate();
+    const params = useParams();
+    const dispatch = useDispatch();
+    const { products } = useSelector(store => store)
+
+
+    console.log("products", products)
     
+    console.log("----", params.productId)
 
-    console.log("products",products)
 
-    console.log("----",params.productId)
-    
-
-    const handleAddToCart=()=>{
+    const handleAddToCart = () => {
+        const data = {productId:params.productId,size:selectedSize.name}    
+        console.log("data_ ",data)
+        dispatch(addItemToCart(data))
         navigate("/cart")
     }
-    useEffect(()  => {
-    const data ={productId:params.productId}
+    useEffect(() => {
+        const data = { productId: params.productId }
         dispatch(findProductById(data))
-    },[params.productId])
+    }, [params.productId])
     return (
         <div className="bg-white lg:px-20">
             <div className="pt-6">
@@ -147,7 +151,7 @@ export default function ProductDetails() {
                         {/* Options */}
                         <div className="mt-4 lg:row-span-3 lg:mt-0">
                             <h2 className="sr-only">Product information</h2>
-                            
+
                             <div className='flex space-x-5 items-center text-lg lg:text-xl text-gray-900 mt-g'>
                                 <p className='font-semibold'>{products.product?.discountedPrice}</p>
                                 <p className='opacity-50 line-through'>{products.product?.price}</p>
@@ -229,12 +233,12 @@ export default function ProductDetails() {
                                 </div>
 
                                 <Button onClick={handleAddToCart}
-                  variant="contained"
-                  type="submit"
-                  sx={{ padding: ".8rem 2rem", marginTop: "2rem" }}
-                >
-                  Add To Cart
-                </Button>
+                                    variant="contained"
+                                    type="submit"
+                                    sx={{ padding: ".8rem 2rem", marginTop: "2rem" }}
+                                >
+                                    Add To Cart
+                                </Button>
 
                             </form>
                         </div>
@@ -321,10 +325,10 @@ export default function ProductDetails() {
                                         <Grid xs={7}>
                                             <LinearProgress
 
-                                                sx={{ bgcolor: "#d0d0d0", borderRadius: 4, height: 7,color:"yellow" }}
+                                                sx={{ bgcolor: "#d0d0d0", borderRadius: 4, height: 7, color: "yellow" }}
                                                 variant="determinate"
                                                 value={70}
-                                                
+
                                             />
                                         </Grid>
 
@@ -392,16 +396,16 @@ export default function ProductDetails() {
                         </Grid>
                     </div>
                 </section>
-                 {/* similer product */}
-        <section className=" pt-10">
-          <h1 className="py-5 text-xl font-bold">Similar Products</h1>
-          <div className="px-5 flex flex-wrap space-x-1.8 space-y-1.8">
-            {mens_kurta.map((item) => (
-              <HomeSectionCard product={item} />
-            ))}
-          </div>
-        </section>
+                {/* similer product */}
+                <section className=" pt-10">
+                    <h1 className="py-5 text-xl font-bold">Similar Products</h1>
+                    <div className="px-5 flex flex-wrap space-x-1.8 space-y-1.8">
+                        {mens_kurta.map((item) => (
+                            <HomeSectionCard product={item} />
+                        ))}
+                    </div>
+                </section>
             </div>
         </div>
     )
-   }
+}
