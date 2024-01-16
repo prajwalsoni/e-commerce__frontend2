@@ -4,7 +4,6 @@ import { Button } from '@mui/base'
 import { useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { getCart } from '../../../State/Cart/Action'
-import { store } from '../../../State/store'
 const Cart = () => {
 
     const navigate=useNavigate();
@@ -13,7 +12,8 @@ const Cart = () => {
     const handleCheckout=()=>{
         navigate("/checkout?step=2")
     }
-
+    console.log("cart",cart)
+    
     useEffect(() => {
         dispatch(getCart())
     },[cart.updateCartItem,cart.deleteCartItem])

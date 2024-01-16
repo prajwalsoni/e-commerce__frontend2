@@ -36,6 +36,7 @@ const cartReducer = (state = initialState, action) => {
         return {
           ...state,
           loading: true,
+          error:null
         };
       case GET_CART_SUCCESS:
         return {
@@ -55,6 +56,7 @@ const cartReducer = (state = initialState, action) => {
         return {
           ...state,
           loading: true,
+          error:null
         };
       case REMOVE_CART_ITEM_SUCCESS:
         return {
