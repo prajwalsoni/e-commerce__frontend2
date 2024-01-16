@@ -16,7 +16,7 @@ export default function Checkout() {
   const location = useLocation();
   const queryParams = new URLSearchParams(location.search);
   const step = queryParams.get('step');
-
+  
   const handleNext = () => {
     setActiveStep((prevActiveStep) => prevActiveStep + 1);
   };

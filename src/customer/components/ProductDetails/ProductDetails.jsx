@@ -125,7 +125,7 @@ export default function ProductDetails() {
                         <div className="overflow-hidden rounded-lg max-w-[30rem] max-h-[32rem]">
                             <img
                                 src={products.product?.imageUrl}
-                                alt={product.images[0].alt}
+                                alt=""
                                 className="h-full w-full object-cover object-center"
                             />
                         </div>
