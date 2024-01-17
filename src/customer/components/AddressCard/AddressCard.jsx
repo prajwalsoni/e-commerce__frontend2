@@ -5,15 +5,15 @@ const AddressCard = ({address}) => {
     <div>
       {/* <h1 className="text-lg font-semibold py-4">Delivery Adress</h1> */}
       <div className="space-y-3">
-        <p className="font-semibold">Prajwal Soni</p>
+        <p className="font-semibold">{address?.firstName + " " + address?.lastName}</p>
 
         <p>
-          Ram Lila Maidan Purani Bazar Pachperwa Balrampur , UP
+        {address?.streetAddress},{address?.state},{address?.zipCode}
         </p>
 
         <div className="space-y-1">
           <p className="font-semibold">Phone No.</p>
-          <p>8931097680</p>
+          <p>{address?.mobile}</p>
         </div>
       </div>
     </div>

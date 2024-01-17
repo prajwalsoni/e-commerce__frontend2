@@ -72,7 +72,7 @@ export default function ProductDetails() {
     const { products } = useSelector(store => store)
 
 
-    console.log("products", products)
+    
     
     console.log("----", params.productId)
 

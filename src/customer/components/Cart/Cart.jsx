@@ -48,7 +48,7 @@ const Cart = () => {
                         </div>
                         <Button onClick={handleCheckout}
                             variant="contained"
-                            className='w-full mt-5'
+                            className='w-full mt-5' 
                             style={{ backgroundColor: "#ffa500", padding: "0.7rem 2.5rem" }}
                         >
                             CheckOut
