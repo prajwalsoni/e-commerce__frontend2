@@ -10,6 +10,7 @@ import Product from "../customer/components/Product/Product";
 import ProductDetails from "../customer/components/ProductDetails/ProductDetails";
 import Cart from "../customer/components/Cart/Cart";
 import Footer from "../customer/components/Footer/Footer";
+import PaymentSuccess from "../customer/components/Payment/PaymentSuccess";
 const CustomerRoutes = () => {
     return (
         <div>
@@ -29,6 +30,7 @@ const CustomerRoutes = () => {
             <Route path="/checkout" element={<Checkout />}></Route>
             <Route path="/account/order" element={<Order/>}></Route>
             <Route path="/account/order/:orderId" element={<OrderDetails />}></Route>
+            <Route path="/payment/:orderId" element={<PaymentSuccess/>}></Route>
            
             {/* <Route path="*" element={<NotFound />} /> */}
           </Routes>

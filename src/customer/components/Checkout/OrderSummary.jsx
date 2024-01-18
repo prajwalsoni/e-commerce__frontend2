@@ -5,6 +5,7 @@ import { Button } from '@mui/base'
 import { useDispatch, useSelector } from 'react-redux'
 import { getOrderById } from '../../../State/Order/Action'
 import { useLocation } from 'react-router-dom'
+import { createPayment } from '../../../State/Payment/Action'
 
 const OrderSummary = () => {
     const dispatch=useDispatch();
@@ -13,12 +14,15 @@ const OrderSummary = () => {
     const searchParams = new URLSearchParams(location.search);
     const orderId = searchParams.get("order_id");
     
-    
+    console.log("order",order.order)
 
     useEffect(()=>{
-        dispatch(getOrderById(orderId))
+        dispatch(getOrderById(orderId)) 
     },[orderId])
     
+    const handleCheckout=()=> {
+        dispatch(createPayment(orderId ))
+    }
     return (
         <div>
             <div className='p-5 shadow-lg rounded-s-md border'>
@@ -40,7 +44,7 @@ const OrderSummary = () => {
                             <span>₹{order.order?.totalPrice}</span>
                         </div>
                         <div className="flex justify-between">
-                            <span>Discount</span>
+                            <span>Total Savings</span>
                             <span className="text-green-700">₹{order.order?.discounte}</span>
                         </div>
                         <div className="flex justify-between">
@@ -50,12 +54,13 @@ const OrderSummary = () => {
                         <hr />
                         <div className="flex justify-between font-bold text-lg">
                             <span>Total Amount</span>
-                            <span className="text-green-700">₹{order.order?.totalDiscountedPrice}</span>
+                            <span className="text-green-700">₹{order.order?.totalPrice}</span>
                         </div>
                         <Button
                             variant="contained"
                             className='w-full mt-5'
                             style={{ backgroundColor: "#ffa500", padding: "0.7rem 2.5rem" }}
+                            onClick={handleCheckout}
                         >
                             CheckOut
                         </Button>
