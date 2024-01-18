@@ -240,10 +240,27 @@ export default function Navigation() {
       </Transition.Root>
 
       <header className="relative bg-white">
-        <p className="flex h-10 items-center justify-center bg-cyan-600 px-4 text-sm font-medium text-white sm:px-6 lg:px-8">
+        <p className="flex h-10 items-center justify-center bg-cyan-600 px-4 text-sm font-medium text-white sm:px-6 lg:px-8" style={{ fontFamily: 'cursive' }}>
           Get Free Delivery On Orders Over 500 ₹
-          <span className="absolute left-1 z-index: 1">STYLE INFUSION</span>
-          <span className="absolute right-1 z-index: 1">CLICK REVOLUTION</span>
+          <span
+               className="absolute left-1 z-index-1"
+               style={{ fontFamily: 'Merriweather, serif'
+               , 
+               fontSize: '20px',
+               fontWeight: 'bold',
+               color: '#FFF5E1' }}
+               >
+               STYLE INFUSION
+             </span>
+             <span
+               className="absolute right-1 z-index-1"
+               style={{ fontFamily:'Merriweather, serif', 
+               fontSize: '20px',
+               fontWeight: 'bold',
+               color: '#FFF5E1' }}
+               >
+               CLICK REVOLUTION
+             </span>
         </p>
 
         <nav aria-label="Top" className="mx-auto">
