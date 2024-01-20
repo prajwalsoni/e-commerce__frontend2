@@ -18,7 +18,7 @@ const TrophyImg = styled('img')({
 
 const Achievements = () => {
     return (
-        <Card sx={{ position: 'relative', bgcolor: "#67f2d1" }}>
+        <Card sx={{ position: 'relative', bgcolor: "#FAD02E" }}>
             <CardContent>
                 <Typography variant='h6' sx={{ letterSpacing: '0.25px', fontStyle: 'italic', fontFamily: 'Dancing Script, cursive' }}>
                     SoniSelects.com

@@ -57,7 +57,7 @@ const salesData = [
 
 const MonthlyOverview = () => {
     return (
-        <Card sx={{bgcolor:"#F5C469"}}>
+        <Card sx={{bgcolor:"#FAD02E"}}>
         <CardHeader
           title='Monthly Overview'
           action={
@@ -67,7 +67,7 @@ const MonthlyOverview = () => {
           }
           subheader={
             <Typography variant='body2'>
-              <Box component='span' sx={{ fontWeight: 600, color: 'text.primary' }}>
+              <Box component='span' sx={{ fontWeight: 600 }}>
                 Total 48.5% Growth
               </Box>{' '}
               😎 This Month
