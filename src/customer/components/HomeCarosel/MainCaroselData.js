@@ -15,6 +15,5 @@ export const mainCarouselData=[
         image:"https://www.ethnicplus.in/cdn/shop/files/6_1_153186f2-c424-4c75-b3c5-9e32b90fdaa9.jpg?v=1758176156&width=2000",
         path:"/women/clothing/women_saree"
     }
-
 ]
 
